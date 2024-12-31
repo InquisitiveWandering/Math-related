@@ -1,0 +1,34 @@
+//Polynomial computation
+#include <stdio.h>
+#include <math.h>
+int main(){
+//degree
+int m;
+printf("Please enter the degree of the polynomial.\n");
+scanf("%d",&m);
+//coefficients:
+float coeff[m+1];
+for(int i=m; i>=0; i--)
+{
+    printf("Enter the coefficient of a[%d]:",i);
+    scanf("%f",&coeff[i]);
+}
+//input variable
+float x;
+printf("Enter the value of the independent variable: ");
+scanf("%f",&x);
+//power calculation
+float indice[m+1];
+for(int i=m; i>=0; i--)
+{
+    indice[i]=powf(x,i);
+}
+//value calculation
+float sum=0;
+for(int i=m; i>=0; i--)
+{
+    sum=sum+ (indice[i])*(coeff[i]);
+}
+printf("The polynomial computes to %f\n",sum);
+return 0;
+}
