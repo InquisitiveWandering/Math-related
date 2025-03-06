@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <math.h>
+
+float poly(){
+//degree
+int m;
+printf("Enter the degree of the polynomial.\n");
+scanf("%d",&m);
+while(m<0)
+{
+    printf("The degree is a non-negative integer. Please recheck and re-enter.\n");
+    scanf("%d",&m);
+}
+//Coefficients:
+float coeff[m+1];
+for(int i=m; i>=0; i--)
+{
+    printf("Enter the coefficient of a[%d]:",i);
+    scanf("%f",&coeff[i]);
+}
+//printing the polynomial
+printf("The polynomial is: \n");
+for(int i=m; i>=1; i--){
+printf("%f*(x^%d) + ",coeff[i],i);
+}
+printf("%f = f(x)",coeff[0]);
+return 0;
+}
+
+int main(){
+poly();
+return 0;
+}
